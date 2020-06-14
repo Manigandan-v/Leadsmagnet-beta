@@ -9,10 +9,6 @@ class LeadsMagnet extends React.Component {
             response: '',
             error: ''
         }
-        this.handleChange = this.handleChange.bind(this);
-    }
-    handleChange(e) {
-        
     }
     handleCheckMail(e) {
         e.preventDefault();
@@ -21,11 +17,20 @@ class LeadsMagnet extends React.Component {
     render() {
         return (
             <div>
-                <h1><img src="favicon.ico" />LeadsMagnet</h1>
-                <form onSubmit={this.handleCheckMail}>
-                    <input type="email" placeholder="Enter your email and learn when we launch" onChange={this.handleChange} />
-                    <button>Submit</button>
-                </form>
+            <h1><img src="favicon.ico"/>Leads Magnet <span>beta</span></h1>
+            <br/>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder='Enter your email and learn when we launch'/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button" onClick={this.handleCheckMail}>Submit</button>
+                            </span>
+    </div>
+</div>
+</div>
+<br/>
+<br/>
                 <h1>SAVE A TON OF TIME IN SAVING YOUR PROSPECT'S CREDENTIALS!</h1>
             </div>
         );

@@ -45,20 +45,40 @@ var LeadsMagnet = function (_React$Component) {
                     'h1',
                     null,
                     React.createElement('img', { src: 'favicon.ico' }),
-                    'Leads Magnet beta'
-                ),
-                React.createElement(
-                    'form',
-                    { onSubmit: this.handleCheckMail },
-                    React.createElement('input', { type: 'email', placeholder: 'Enter your email and learn when we launch', onChange: this.handleChange }),
+                    'Leads Magnet ',
                     React.createElement(
-                        'button',
+                        'span',
                         null,
-                        'Submit'
+                        'beta'
                     )
                 ),
+                React.createElement('br', null),
+             React.createElement(
+                    'div',
+                    { 'class': 'row' },
+                    React.createElement(
+                        'div',
+                        { 'class': 'col-lg-6' },
+                        React.createElement(
+                            'div',
+                            { 'class': 'input-group' },
+                            React.createElement('input', { type: 'email', 'class': 'form-control', placeholder: 'Enter your email and learn when we launch' }),
+                            React.createElement(
+                                'span',
+                                { 'class': 'input-group-btn' },
+                                React.createElement(
+                                    'button',
+                                    { 'class': 'btn btn-secondary', type: 'button', onClick: this.handleCheckMail },
+                                    'Submit'
+                                )
+                            )
+                        )
+                    )
+                ),
+             React.createElement('br', null),
+             React.createElement('br', null),
                 React.createElement(
-                    'h1',
+                    'h3',
                     null,
                     'SAVE A TON OF TIME IN SAVING YOUR PROSPECT\'S CREDENTIALS!'
                 )
