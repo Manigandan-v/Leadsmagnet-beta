@@ -44,7 +44,7 @@ var LeadsMagnet = function (_React$Component) {
                 React.createElement(
                     'h1',
                     null,
-                    React.createElement('img', { src: 'favicon.ico' }),
+                    React.createElement('img', { src: 'images/favicon.ico' }),
                     'Leads Magnet ',
                     React.createElement(
                         'span',
@@ -55,10 +55,10 @@ var LeadsMagnet = function (_React$Component) {
                 React.createElement('br', null),
              React.createElement(
                     'div',
-                    { 'class': 'row' },
+                    { 'class': 'row align-items-center' },
                     React.createElement(
                         'div',
-                        { 'class': 'col-lg-6' },
+                        { 'class': 'col' },
                         React.createElement(
                             'div',
                             { 'class': 'input-group' },
@@ -75,7 +75,6 @@ var LeadsMagnet = function (_React$Component) {
                         )
                     )
                 ),
-             React.createElement('br', null),
              React.createElement('br', null),
                 React.createElement(
                     'h3',

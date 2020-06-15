@@ -17,10 +17,10 @@ class LeadsMagnet extends React.Component {
     render() {
         return (
             <div>
-            <h1><img src="favicon.ico"/>Leads Magnet <span>beta</span></h1>
+            <h1><img src="images/favicon.ico"/>Leads Magnet <span>beta</span></h1>
             <br/>
-                <div class="row">
-                    <div class="col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col">
                         <div class="input-group">
                             <input type="email" class="form-control" placeholder='Enter your email and learn when we launch'/>
                             <span class="input-group-btn">
@@ -29,7 +29,6 @@ class LeadsMagnet extends React.Component {
     </div>
 </div>
 </div>
-<br/>
 <br/>
                 <h1>SAVE A TON OF TIME IN SAVING YOUR PROSPECT'S CREDENTIALS!</h1>
             </div>
