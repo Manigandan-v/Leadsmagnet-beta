@@ -43,9 +43,37 @@ var LeadsMagnet = function (_React$Component) {
                 console.log(val.data);
                 _this2.setState({ response: val.data });
                 if (val.data.answer) {
+                    var modal = document.getElementById("myModal");
+                    var span = document.getElementsByClassName("close")[0];
+                    modal.style.display = "block";
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            };
                     console.log("Mail sent");
                 } else if (val.data.error) {
                     console.log("Invalid mail");
+                    var modal2 = document.getElementById("myModal2");
+                    var span2 = document.getElementsByClassName("close")[1];
+                    modal2.style.display = "block";
+            // When the user clicks on <span> (x), close the modal
+            span2.onclick = function () {
+                modal2.style.display = "none";
+            };
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal2) {
+                    modal2.style.display = "none";
+                }
+            };
                 }
             }).catch(function (e) {
                 console.log(e);
@@ -102,6 +130,42 @@ var LeadsMagnet = function (_React$Component) {
                     'h3',
                     null,
                     'SAVE A TON OF TIME IN SAVING YOUR PROSPECT\'S CREDENTIALS!'
+                ),
+                 React.createElement(
+                    'div',
+                    { id: 'myModal', 'class': 'modal' },
+                    React.createElement(
+                        'div',
+                        { 'class': 'modal-content' },
+                        React.createElement(
+                            'span',
+                            { 'class': 'close' },
+                            '\xD7'
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            'Thanks for signing up with us..'
+                        )
+                    )
+                ),
+                 React.createElement(
+                    'div',
+                    { id: 'myModal2', 'class': 'modal' },
+                    React.createElement(
+                        'div',
+                        { 'class': 'modal-content' },
+                        React.createElement(
+                            'span',
+                            { 'class': 'close' },
+                            '\xD7'
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            'Please enter valid email to continue..'
+                        )
+                    )
                 )
             );
         }
