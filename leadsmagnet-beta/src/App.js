@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -17,23 +18,40 @@ var LeadsMagnet = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (LeadsMagnet.__proto__ || Object.getPrototypeOf(LeadsMagnet)).call(this, props));
 
         _this.handleCheckMail = _this.handleCheckMail.bind(_this);
+        _this.handleChange = _this.handleChange.bind(_this);
         _this.state = {
-            value: '',
+            email: '',
             response: '',
             error: ''
         };
-        _this.handleChange = _this.handleChange.bind(_this);
         return _this;
     }
 
     _createClass(LeadsMagnet, [{
         key: 'handleChange',
-        value: function handleChange(e) {}
+        value: function handleChange(event) {
+            this.setState({ email: event.target.value });
+        }
     }, {
         key: 'handleCheckMail',
         value: function handleCheckMail(e) {
+            var _this2 = this;
+
             e.preventDefault();
-            alert('Clicked');
+            var key = process.env.REACT_APP_API;
+            axios.get('https://intern-send-mail-api.herokuapp.com/user_2?Emailaddress=' + this.state.email + '&key=' + key).then(function (val) {
+                console.log(val.data);
+                _this2.setState({ response: val.data });
+                if (val.data.answer) {
+                    console.log("Mail sent");
+                } else if (val.data.error) {
+                    console.log("Invalid mail");
+                }
+            }).catch(function (e) {
+                console.log(e);
+                _this2.setState({ error: e });
+                console.log(e);
+            });
         }
     }, {
         key: 'render',
@@ -53,29 +71,33 @@ var LeadsMagnet = function (_React$Component) {
                     )
                 ),
                 React.createElement('br', null),
-             React.createElement(
-                    'div',
-                    { 'class': 'row align-items-center' },
+                React.createElement(
+                    'form',
+                    { onSubmit: this.handleCheckMail },
                     React.createElement(
                         'div',
-                        { 'class': 'col' },
+                        { className: 'row align-items-center' },
                         React.createElement(
                             'div',
-                            { 'class': 'input-group' },
-                            React.createElement('input', { type: 'email', 'class': 'form-control', placeholder: 'Enter your email and learn when we launch' }),
+                            { className: 'col' },
                             React.createElement(
-                                'span',
-                                { 'class': 'input-group-btn' },
+                                'div',
+                                { className: 'input-group' },
+                                React.createElement('input', { type: 'email', className: 'form-control', name: 'usr_mail', onChange: this.handleChange, placeholder: 'Enter your email and learn when we launch' }),
                                 React.createElement(
-                                    'button',
-                                    { 'class': 'btn btn-secondary', type: 'button', onClick: this.handleCheckMail },
-                                    'Submit'
+                                    'span',
+                                    { className: 'input-group-btn' },
+                                    React.createElement(
+                                        'button',
+                                        { className: 'btn btn-secondary', type: 'submit' },
+                                        'Submit'
+                                    )
                                 )
                             )
                         )
                     )
                 ),
-             React.createElement('br', null),
+                React.createElement('br', null),
                 React.createElement(
                     'h3',
                     null,
