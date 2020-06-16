@@ -32,7 +32,7 @@ class LeadsMagnet extends React.Component {
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function (event) {
-                if (event.target == modal) {
+                if (event.target === modal) {
                     modal.style.display = "none";
                 }
             };
@@ -49,7 +49,7 @@ class LeadsMagnet extends React.Component {
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function (event) {
-                if (event.target == modal2) {
+                if (event.target === modal2) {
                     modal2.style.display = "none";
                 }
             };
